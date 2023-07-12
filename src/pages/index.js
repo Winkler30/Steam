@@ -20,6 +20,8 @@ export default function Home() {
             <Subtitle>Promoções</Subtitle>
             <div>
               <SaleCard/>
+              <SaleCard/>
+              <SaleCard/>
             </div>
           </div>
           <div>
