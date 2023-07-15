@@ -22,3 +22,6 @@
     font-style: italic;
     cursor: pointer;
 }
+.image{
+    object-fit: contain;
+}
