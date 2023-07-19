@@ -17,7 +17,7 @@ export default function CartButton(){
             <BsCart4 
                 size={40}
             />
-            <div className={styles.quantity}>{cart.length}</div>
+            {cart.length !== 0 && <div className={styles.quantity}>{cart.length}</div>}
             {open && <CartMenu/>}
         </div>
     )
