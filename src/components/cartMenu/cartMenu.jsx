@@ -1,7 +1,14 @@
 import styles from './cartMenu.module.css'
 import CartOption from '@/components/cartOption/cartOption'
+import { useRecoilState } from 'recoil'
+import { cartState } from '@/atoms/cart'
 
-export default function CartMenu({cart, onRemove}){
+export default function CartMenu(){
+    const [cart, setCart] = useRecoilState(cartState)
+
+    const handleRemoveProduct = (pos) => {
+        setCart(cart.filter((obj, posObj) => posObj !== pos ))
+      }
     return(
         <div className={styles.menu}>
             <div className={styles.options}>
@@ -14,7 +21,7 @@ export default function CartMenu({cart, onRemove}){
                             image={cartInfo.image}
                             title={cartInfo.name}
                             price={cartInfo.price}
-                            onRemove={() => onRemove(pos)}
+                            onRemove={() => handleRemoveProduct(pos)}
                             key={`cart-info-${pos}`}
                         />
                     )
